@@ -1,0 +1,235 @@
+/* Importando fontes com estilo gótico/militar imperial */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Hubot+Sans:wght@400;700&display=swap');
+
+:root {
+    --bg-grimdark: #07090e;       
+    --armor-blue: #121c2e;        
+    --imperial-gold: #dfb241;     
+    --purity-red: #a71d1d;        
+    --text-pure: #f1f5f9;         
+    --text-gray: #94a3b8;         
+    --font-gothic: 'Cinzel', Georgia, serif;
+    --font-tactical: 'Hubot Sans', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-tactical);
+    background-color: var(--bg-grimdark);
+    color: var(--text-pure);
+    line-height: 1.6;
+    padding: 10px;
+    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+header, main, footer {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: var(--armor-blue);
+    padding: 25px;
+    border: 3px solid var(--imperial-gold);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(223, 178, 65, 0.15), inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* ==========================================
+    CONTRÔLE DE IMAGENS (ALTERADO CONFORME PEDIDO)
+   ========================================== */
+
+/* DESTAQUE SUPREMO: Minha Foto de Perfil */
+.profile-frame {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px auto;
+    border: 4px solid var(--imperial-gold);
+    box-shadow: 0 0 25px rgba(223, 178, 65, 0.6);
+    border-radius: 50%; 
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+}
+
+.profile-frame:hover {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.main-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* IMAGENS FURIOSO E NORMAL: Tamanho aumentado de 60px para 95px */
+.insignia-tactical {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid var(--imperial-gold);
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+/* IMAGEM DOS ORCS: Totalmente centralizada e bem maior */
+.orcs-large-img {
+    display: block;
+    width: 100%;
+    max-width: 300px; /* Ficou grande no meio do card */
+    height: auto;
+    margin: 20px auto; /* O 'auto' nas laterais centraliza a imagem */
+    border: 3px solid var(--purity-red);
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(167, 29, 29, 0.5);
+}
+
+/* Insígnia do topo */
+.insignia-header {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border: 2px solid var(--imperial-gold);
+    border-radius: 4px;
+}
+
+/* ==========================================
+    ESTRUTURA E LAYOUT DE SEÇÕES
+   ========================================== */
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+header h1 {
+    font-family: var(--font-gothic);
+    color: var(--imperial-gold);
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    text-shadow: 0 0 10px rgba(223, 178, 65, 0.3);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+h2 {
+    font-family: var(--font-gothic);
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    margin-bottom: 15px;
+    color: var(--imperial-gold);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--purity-red);
+    padding-bottom: 5px;
+}
+
+.title-with-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.title-with-icon h2 {
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+ul li {
+    background-color: #0a101a;
+    padding: 12px;
+    border-left: 4px solid var(--imperial-gold);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Caixa do Projeto */
+.project {
+    background-color: #090e17;
+    padding: 20px;
+    border: 1px solid rgba(223, 178, 65, 0.3);
+    border-left: 6px solid var(--purity-red);
+}
+
+.project h3 {
+    font-family: var(--font-gothic);
+    color: var(--text-pure);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.project p {
+    margin-bottom: 15px;
+}
+
+/* Links */
+a {
+    color: var(--imperial-gold);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--font-gothic);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-pure);
+    text-shadow: 0 0 8px var(--imperial-gold);
+}
+
+/* Rodapé */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+footer p {
+    text-align: center;
+}
+
+.links a {
+    margin: 5px 10px;
+    display: inline-block;
+}
+
+/* Responsividade para telas maiores */
+@media (min-width: 600px) {
+    .about-container {
+        flex-direction: row; 
+        text-align: left;
+    }
+    
+    .header-container {
+        flex-direction: row; 
+        justify-content: center;
+    }
+}
